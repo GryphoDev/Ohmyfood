@@ -1,0 +1,51 @@
+
+input[type="checkbox"] {
+    display: none;
+}
+.cards {
+    position: relative;
+    overflow: hidden;
+}
+label, .block , .cards{
+    width: 350px;
+    height: 50px;
+}
+label {
+    position: absolute;
+    display: block;
+    z-index: 1;
+}
+.block {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    position: absolute;
+    background-color: yellow;
+}
+.fenetre {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    right: -55px;
+    transition: transform 500ms;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 60px;
+    background-color: aqua;
+}
+input:checked + .fenetre {
+    transform: translateX(-50px);
+}
+h3, p{
+    margin: 0;
+}
