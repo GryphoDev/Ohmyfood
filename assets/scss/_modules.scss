@@ -1,0 +1,26 @@
+@import 'variables';
+
+.header {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 2px 4px 0px #00000026;
+    &_logo{
+        width: 162px;
+    }
+}
+.footer {
+    @include flex(column, baseline, baseline, 16px);
+    padding: 22px 25px;
+    &_logo {
+        color: white;
+    }
+    &_links {
+        @include flex(column, baseline, baseline, 7px);
+        & i {
+            width: 20px;
+        }
+        & a {
+            @include flex(row, baseline, center, 10px);
+        }
+    }
+}

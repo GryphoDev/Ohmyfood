@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/scss/commons.css">
+    <link rel="stylesheet" href="assets/scss/restaurants.css">
     <link rel="stylesheet" href="test.css">
     <title>Menu Le delice des sens</title>
 </head>
 <body>
-    <header>
-        <i class="fa-solid fa-arrow-left"></i>
-        <img class="header_logo" src="images/logo/ohmyfood.png" alt="ohmyfood">
+    <header class="header">
+        <a href="home-page.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <img class="header_logo" src="/assets/images/logo/ohmyfood.png" alt="ohmyfood">
+        <div class="ghost"></div>
     </header>
-    <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image du restaurant Le delice des sens">
+    <img src="/assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image du restaurant Le delice des sens">
     <main>
         <div class="main-title">
             <h1>Le delice des sens</h1>
@@ -54,12 +62,12 @@
                     <div class="cards">
                         <label for="entree3"></label>
                         <div class="block">
-                            <h3>Poulet rôti aux herbes de Provence</h3>
-                            <p>Et sa crème de truffe</p>
+                            <h3>Velouté de cèpes</h3>
+                            <p>Aux truffes</p>
                         </div>
                         <input type="checkbox" name="entree3" id="entree3">
                         <div class="fenetre">
-                            <p>40€</p>
+                            <p>20€</p>
                             <div class="icon">
                                 <i class="fa-solid fa-circle-check"></i>
                             </div>
@@ -159,8 +167,8 @@
         </form>
     </section>
     </main>
-    <footer>
-        <img class="footer_logo" src="images/logo/ohmyfood.png" alt="ohmyfood">
+    <footer class="footer">
+        <h1 class="footer_logo">ohmyfood</h1>
         <ul class="footer_links">
             <li>
                 <a href="#">
@@ -180,11 +188,11 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="mailto:ohmyfood@email.com?subject=Contact">
                     Contact
                 </a>
             </li>
         </ul>
-    </footer>
+</footer>
 </body>
 </html>
