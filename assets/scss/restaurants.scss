@@ -1,14 +1,26 @@
+@import 'variables';
 @import 'mixins';
 @import 'animations';
 
-body {
     h1 {
-        @include font($font-shrikhand, 28px, 400);
+        @include font($font-shrikhand, 20px, 400);
     }
     h2 {
         @include font($size: 16px, $weight: 300);
     }
-}
+    section {
+        @include flex(column, center, baseline, 10px);
+    }
+    form {
+        @include flex(column, center, center, 40px);
+
+    }
+    span:nth-child(2) {
+        @include font($size: 13px, $weight: 300);
+    }
+    b {
+        @include font($size: 15px, $weight: 500);
+    }
 
 .header {
     @include flex(row, space-between, center);
@@ -20,25 +32,97 @@ body {
     }
 }
 main {
-    position: relative;
     .banniere {
         width: 100%;
         height: 275px;
     }
     .main-container {
         @include position(relative, -60px);
-        padding: 32px 13px;
+        @include flex(column, center, center);
+        padding: 32px 13px 0;
         border-radius: 40px 40px 0 0;
         background-color: $bg-color-grey;
         &_title {
-            @include flex(row, baseline, center, 50px);
+            @include flex(row, baseline, center, 30px);
             @include heart;
             padding: 0 0 40px 10px;
+        }
+
+
+
+
+        .menu {
+                .underline {
+                    width: 40px;
+                    height: 3px;
+                    background-color:$color-green;
+                }
+                &_cards {
+                    position: relative;
+                    overflow: hidden;
+                    padding: 13px 10px;
+                    width: calc(320px - 13px*2);
+                    border-radius: 15px;
+                    background-color: white;
+                    & label {
+                        @include flex(column, center, baseline, 5px);
+                        position: relative;
+                        cursor:pointer;
+                    }
+                    &_slidebar {
+                        @include flex(row,space-between, center);
+                        width: 100px;
+                        height: 69.18px;
+                        position: absolute;
+                        top: 0;
+                        right: -50px;
+                        background-color: white;
+
+                        &_price {
+                            @include flex(row, center, end);
+                            width: 50%;
+                            height: 100%;
+                            padding-bottom: 13px;
+                        }
+                        &_icon {
+                            @include flex(row,space-around, center);
+                            background-color: $color-green;
+                            border-radius: 0 15px 15px 0;
+                            width: 50%;
+                            height: 100%;
+                            & i {
+                                font-size: 1.3rem;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
+
+
+
+
+
+
+.containerS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
 }
+.submit {
+    @include button(13px, 50px);
+    @include font($size: 16px, $weight: 400);
+    color: white;
+    border: none;
+    margin-bottom: 40px;
+}
+
 .footer {
     @include position(relative, -60px);
+}
 
-}
-}
+

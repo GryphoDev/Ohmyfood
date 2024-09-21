@@ -1,7 +1,8 @@
-.link-restaurants .button {
-  transition: opacity 300ms, box-shadow 300ms;
+.button, .submit {
+  transition: all 300ms;
 }
-.link-restaurants .button:hover {
+
+.button:hover, .submit:hover {
   opacity: 0.8;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4392156863);
 }
@@ -12,22 +13,70 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  transition: opacity 300ms ease;
 }
 
 input:checked + label .fa-solid.fa-heart {
   opacity: 1;
 }
 
-body h1 {
+.menu_cards_slidebar {
+  transition: all 500ms ease;
+}
+
+input:checked ~ .menu_cards_slidebar {
+  transform: translateX(-50px);
+  box-shadow: -15px 0 30px rgb(255, 255, 255);
+}
+
+input:checked + label span {
+  width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+label span {
+  transition: all 1s;
+}
+
+h1 {
   font-family: "Shrikhand";
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 400;
 }
-body h2 {
+
+h2 {
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 300;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+span:nth-child(2) {
+  font-family: "Roboto";
+  font-size: 13px;
+  font-weight: 300;
+}
+
+b {
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .header {
@@ -44,9 +93,6 @@ body h2 {
   font-size: 1.3rem;
 }
 
-main {
-  position: relative;
-}
 main .banniere {
   width: 100%;
   height: 275px;
@@ -57,7 +103,12 @@ main .main-container {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  padding: 32px 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 32px 13px 0;
   border-radius: 40px 40px 0 0;
   background-color: #F6F6F6;
 }
@@ -66,7 +117,7 @@ main .main-container_title {
   flex-direction: row;
   justify-content: baseline;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   padding: 0 0 40px 10px;
 }
 main .main-container_title label {
@@ -100,7 +151,88 @@ main .main-container_title label .fa-solid.fa-heart {
   font-size: 1.4rem;
   z-index: 2;
 }
-main .footer {
+main .main-container .menu .underline {
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+}
+main .main-container .menu_cards {
+  position: relative;
+  overflow: hidden;
+  padding: 13px 10px;
+  width: 294px;
+  border-radius: 15px;
+  background-color: white;
+}
+main .main-container .menu_cards label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+}
+main .main-container .menu_cards_slidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  width: 100px;
+  height: 69.18px;
+  position: absolute;
+  top: 0;
+  right: -50px;
+  background-color: white;
+}
+main .main-container .menu_cards_slidebar_price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  gap: 0;
+  width: 50%;
+  height: 100%;
+  padding-bottom: 13px;
+}
+main .main-container .menu_cards_slidebar_icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  width: 50%;
+  height: 100%;
+}
+main .main-container .menu_cards_slidebar_icon i {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.containerS {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.submit {
+  padding: 13px 50px;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  border: none;
+  margin-bottom: 40px;
+}
+
+.footer {
   position: relative;
   top: -60px;
   left: 0px;

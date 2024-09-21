@@ -10,7 +10,7 @@
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
+  justify-content: center;
   align-items: baseline;
   gap: 16px;
   padding: 22px 25px;
@@ -48,44 +48,37 @@ body {
   font-weight: 400;
   background-color: #F6F6F6;
 }
-body h1 {
+
+img {
+  object-fit: cover;
+}
+
+h1 {
   font-family: "Roboto";
   font-size: 20px;
   font-weight: 700;
 }
-body a {
+
+a {
   color: white;
   text-decoration: none;
 }
-body li {
+
+li {
   list-style-type: none;
 }
-body input[type=checkbox] {
+
+input[type=checkbox] {
   display: none;
 }
-body .link-restaurants p {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 300;
-  color: #353535;
-}
-body .restaurants h2 {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 700;
-}
-body .restaurants p {
-  font-family: "Roboto";
-  font-size: 15px;
-  font-weight: 300;
-}
-body footer {
+
+footer {
   background-color: #353535;
 }
-body footer .footer_logo {
+footer .footer_logo {
   font-family: "Shrikhand";
   font-size: 18px;
   font-weight: 400;
 }
 
-/*# sourceMappingURL=commons.css.map */
+/*# sourceMappingURL=bases.css.map */

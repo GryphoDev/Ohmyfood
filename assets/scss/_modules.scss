@@ -9,7 +9,7 @@
     }
 }
 .footer {
-    @include flex(column, baseline, baseline, 16px);
+    @include flex(column, center, baseline, 16px);
     padding: 22px 25px;
     &_logo {
         color: white;
