@@ -15,7 +15,7 @@ body {
 img {
     object-fit: cover;
 }
-h1 {
+h1, h2 {
     @include font($size: 20px, $weight: 700);
 }
 a {

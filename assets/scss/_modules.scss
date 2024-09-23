@@ -5,22 +5,30 @@
     padding: 20px;
     box-shadow: 0px 2px 4px 0px #00000026;
     &_logo{
-        width: 162px;
+        width: 58%;
+        max-width: 200px;
     }
 }
 .footer {
     @include flex(column, center, baseline, 16px);
     padding: 22px 25px;
+    @media screen and (min-width: 900px) {
+        @include flex(row-reverse, flex-start, center, 70px);
+        padding: 55px 55px 30px;
+    }
     &_logo {
         color: white;
     }
     &_links {
-        @include flex(column, baseline, baseline, 7px);
+        @include flex(column, flex-start, baseline, 7px);
+        @media screen and (min-width: 900px) {
+            @include flex(row, flex-start, center, 16px);
+        }
         & i {
             width: 20px;
         }
         & a {
-            @include flex(row, baseline, center, 10px);
+            @include flex(row, flex-start, center, 10px);
         }
     }
 }

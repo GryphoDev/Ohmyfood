@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'mixins';
 @import 'animations';
+@import 'bases';
+
 
 .header {
     @include flex(row, center, center);
@@ -12,7 +14,7 @@
     }
 }
 .restaurants {
-    h2 {
+    h3 {
         @include font($size: 16px, $weight: 700);
     }
     p {
@@ -49,82 +51,121 @@ main {
         }
     }
     .how-it-works {
-        @include flex(column, center, center, 35px);
+        @include flex(column, center, center, 25px);
         background-color: white;
         padding: 50px 20px 70px;
-        &_table {
-            @include flex(column, center, center, 25px);
-            &_list {
-                position: relative;
-                background-color: $bg-color-grey;
-                box-shadow: 0px 4px 15px 0px #00000026;
-                border-radius: 20px;
-                width: 268px;
-                padding: 18px 0px;
-                margin-left: 10px;
-                &_content {
-                    @include flex(row, baseline, center, 20px);
-                    padding-left: 30px;
-                }
-                & i {
-                    color: $icon-color;
-                    width: 20px;
-                }
-                & .fa-store {
-                    color: $color-purple;
-                }
-                &_numbers {
-                    @include flex(row, center, center);
-                    @include position(absolute, 15px, -12px);
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    background-color: $color-purple;
-                    color: white;
+        @media screen and (min-width: 900px) {
+            padding: 50px 30px 70px;
+            }
+        &_container { 
+            @include flex(column, center, baseline, 25px);
+            width: 100%;
+            max-width: 335px;
+            @media screen and (min-width: 900px) {
+            max-width: 1050px;
+            }
+                &_table {
+                    @include flex(column, center, center, 25px);
+                    width: 100%;
+                    @media screen and (min-width: 900px) {
+                        flex-direction: row;
+                    }
+                    &_list {
+                        position: relative;
+                        background-color: $bg-color-grey;
+                        box-shadow: 0px 4px 15px 0px #00000026;
+                        border-radius: 20px;
+                        width: 100%;
+                        padding: 30px 0px 30px 30px;
+                        margin-left: 12px;
+                        &_content {
+                            @include flex(row, center, center);
+                            &_numbers {
+                                @include flex(row, center, center);
+                                @include position(absolute, 27px, -12px);
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 50%;
+                                background-color: $color-purple;
+                                color: white;
+                            }
+                        }
+                        & i {
+                            position: absolute;
+                            left: 30px;
+                            color: $icon-color;
+                            width: 20px;
+                        }
+                        & .fa-store {
+                            color: $color-purple;
+                        }
+                    }
                 }
             }
         }
-    }
+          
+     
     .restaurants {
-        @include flex(column, baseline, baseline, 30px);
+        @include flex(column, center, center, 30px);
         padding: 55px 20px;
-        & a {
+        @media screen and (min-width: 900px) {
+            padding: 50px 100px 70px;
+            }
+        &_container{
+            @include flex(column, center, baseline, 15px);
             width: 100%;
-            color: inherit;
-        }
-            &_container {
-                @include flex(column, center, center, 15px);
+            max-width: 490px;
+            @media screen and (min-width: 900px) {
+                @include flex(column, center, baseline, 50px);
+                max-width: calc(490px * 2 + 100px);
+            }
+            &_title {
+                margin-bottom: 20px;
+                @media screen and (min-width: 900px) {
+                    margin-bottom: -25px;
+                }
+            }
+            &_box {
+                @include flex(column, center, baseline, 15px);
                 width: 100%;
-                &_card {
+                @media screen and (min-width: 900px) {
+                    @include flex(row, center, baseline, 100px);
+                }
+                
+                &_card{
                     position: relative;
                     width: 100%;
+                    max-width: 490px;
                     background-color: white;
                     border-radius: 15px;
-                    &_new {
+                    & a {
+                        width: 100%;
+                        color: inherit;
+                        & img {
+                            width: 100%;
+                            max-width: 490px;
+                            height: 174px;
+                            border-radius: 15px 15px 0 0;
+                        }
+                    }
+                    &_new{
                         @include position(absolute, 10px, null, 10px, null);
                         @include font(null, 14px, 500);
                         background-color: $color-green;
                         color: $color-text-green;
                         padding: 6px 9px;
-                    }
-                    & img {
-                        width: 100%;
-                        height: 174px;
-                        border-radius: 15px 15px 0 0;
-                        
+
                     }
                     &_content {
                         @include flex(row, space-between, center);
                         padding: 13px 25px 13px 13px;
-                        &_text {
-                            @include flex (column, baseline, baseline, 5px);
-                            
-                        }
                         @include heart;
+                        &_text {
+                            @include flex (column, center, baseline, 5px);
                         }
+                    }
                 }
             }
+        }
     }
 }
-
-

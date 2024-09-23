@@ -1,19 +1,27 @@
 @import 'variables';
 @import 'mixins';
 @import 'animations';
-
+@import 'bases';
+    body {
+        background: white;
+    }
     h1 {
         @include font($font-shrikhand, 20px, 400);
+        @media screen and (min-width: 600px) {
+            @include font($font-shrikhand, 26px, 400);
+            }
     }
     h2 {
         @include font($size: 16px, $weight: 300);
     }
     section {
         @include flex(column, center, baseline, 10px);
+        width: 100%;
+        max-width: 634px;
     }
     form {
         @include flex(column, center, center, 40px);
-
+        width: 100%;
     }
     span:nth-child(2) {
         @include font($size: 13px, $weight: 300);
@@ -34,16 +42,19 @@
 main {
     .banniere {
         width: 100%;
-        height: 275px;
+        height: 100%;
+        max-height: 383px;
     }
     .main-container {
+        @include flex (column, center, center);
         @include position(relative, -60px);
-        @include flex(column, center, center);
+        max-width: 1055px;
+        margin: 0 auto;
         padding: 32px 13px 0;
         border-radius: 40px 40px 0 0;
         background-color: $bg-color-grey;
         &_title {
-            @include flex(row, baseline, center, 30px);
+            @include flex(row, flex-start, center, 30px);
             @include heart;
             padding: 0 0 40px 10px;
         }
@@ -61,7 +72,8 @@ main {
                     position: relative;
                     overflow: hidden;
                     padding: 13px 10px;
-                    width: calc(320px - 13px*2);
+                    width: 100%;
+                    max-width: 634px;
                     border-radius: 15px;
                     background-color: white;
                     & label {
@@ -121,8 +133,7 @@ main {
     margin-bottom: 40px;
 }
 
-.footer {
-    @include position(relative, -60px);
+footer{
+    margin-top: -60px;
 }
-
 

@@ -13,6 +13,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+  transition: all 300ms;
 }
 
 input:checked + label .fa-solid.fa-heart {
@@ -36,7 +37,260 @@ input:checked + label span {
 }
 
 label span {
-  transition: all 1s;
+  animation: visible 900ms ease-in-out forwards;
+  opacity: 0;
+}
+
+.entrees span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.entrees span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.entrees span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.plats span:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.plats span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.plats span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.desserts span:nth-child(1) {
+  animation-delay: 0.7s;
+}
+
+.desserts span:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.desserts span:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+@keyframes visible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes invisible {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background-color: white;
+  animation: out 20s forwards, invisible ease-out 0.5s 19.5s;
+  z-index: 999;
+}
+
+@keyframes out {
+  100% {
+    display: none;
+  }
+}
+.body-acceuil {
+  overflow: hidden;
+  animation: overflow 0s 20s forwards;
+}
+
+@keyframes overflow {
+  100% {
+    overflow: visible;
+  }
+}
+.loader span {
+  font-family: "Shrikhand";
+  font-size: 40px;
+  letter-spacing: 10px;
+  opacity: 0;
+}
+@media screen and (min-width: 900px) {
+  .loader span {
+    font-size: 80px;
+  }
+}
+
+.loader span:nth-child(1) {
+  animation: loadermain 2.33s 0.33s both infinite;
+}
+
+.loader span:nth-child(2) {
+  animation: loadermain2 2.33s 0.33s both infinite;
+}
+
+.loader span:nth-child(3) {
+  animation: loadermain 2.33s 0.66s both infinite;
+}
+
+.loader span:nth-child(4) {
+  animation: loadermain2 2.33s 0.66s both infinite;
+}
+
+.loader span:nth-child(5) {
+  animation: loadermain 2.33s 1s both infinite;
+}
+
+.loader span:nth-child(6) {
+  animation: loadermain2 2.33s 1s both infinite;
+}
+
+.loader span:nth-child(7) {
+  animation: loadermain 2.33s 1s both infinite;
+}
+
+.loader span:nth-child(8) {
+  animation: loadermain2 2.33s 1s both infinite;
+}
+
+@keyframes loadermain {
+  33% {
+    transform: scale(1.5);
+    color: #9356DC;
+    opacity: 1;
+    text-shadow: 3px 3px 5px #5e398c;
+    @media screen and (min-width: 900px) {
+      text-shadow: 6px 6px 10px #5e398c;
+    }
+  }
+}
+@keyframes loadermain2 {
+  33% {
+    transform: scale(1.5);
+    color: #FF79DA;
+    opacity: 1;
+    text-shadow: 3px 3px 5px #793967;
+    @media screen and (min-width: 900px) {
+      text-shadow: 6px 6px 10px #793967;
+    }
+  }
+}
+.header {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+}
+.header_logo {
+  width: 58%;
+  max-width: 200px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 16px;
+  padding: 22px 25px;
+}
+@media screen and (min-width: 900px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 70px;
+    padding: 55px 55px 30px;
+  }
+}
+.footer_logo {
+  color: white;
+}
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 7px;
+}
+@media screen and (min-width: 900px) {
+  .footer_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+  }
+}
+.footer_links i {
+  width: 20px;
+}
+.footer_links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #F6F6F6;
+}
+
+img {
+  object-fit: cover;
+}
+
+h1, h2 {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 700;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+footer {
+  background-color: #353535;
+}
+footer .footer_logo {
+  font-family: "Shrikhand";
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .header {
@@ -54,7 +308,7 @@ label span {
   color: #353535;
 }
 
-.restaurants h2 {
+.restaurants h3 {
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 700;
@@ -108,49 +362,66 @@ main .how-it-works {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 35px;
+  gap: 25px;
   background-color: white;
   padding: 50px 20px 70px;
 }
-main .how-it-works_table {
+@media screen and (min-width: 900px) {
+  main .how-it-works {
+    padding: 50px 30px 70px;
+  }
+}
+main .how-it-works_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 25px;
+  width: 100%;
+  max-width: 335px;
+}
+@media screen and (min-width: 900px) {
+  main .how-it-works_container {
+    max-width: 1050px;
+  }
+}
+main .how-it-works_container_table {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 25px;
+  width: 100%;
 }
-main .how-it-works_table_list {
+@media screen and (min-width: 900px) {
+  main .how-it-works_container_table {
+    flex-direction: row;
+  }
+}
+main .how-it-works_container_table_list {
   position: relative;
   background-color: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
   border-radius: 20px;
-  width: 268px;
-  padding: 18px 0px;
-  margin-left: 10px;
+  width: 100%;
+  padding: 30px 0px 30px 30px;
+  margin-left: 12px;
 }
-main .how-it-works_table_list_content {
+main .how-it-works_container_table_list_content {
   display: flex;
   flex-direction: row;
-  justify-content: baseline;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding-left: 30px;
+  gap: 0;
 }
-main .how-it-works_table_list i {
-  color: #7E7E7E;
-  width: 20px;
-}
-main .how-it-works_table_list .fa-store {
-  color: #9356DC;
-}
-main .how-it-works_table_list_numbers {
+main .how-it-works_container_table_list_content_numbers {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 0;
   position: absolute;
-  top: 15px;
+  top: 27px;
   left: -12px;
   right: 0px;
   bottom: 0px;
@@ -160,33 +431,90 @@ main .how-it-works_table_list_numbers {
   background-color: #9356DC;
   color: white;
 }
+main .how-it-works_container_table_list i {
+  position: absolute;
+  left: 30px;
+  color: #7E7E7E;
+  width: 20px;
+}
+main .how-it-works_container_table_list .fa-store {
+  color: #9356DC;
+}
 main .restaurants {
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
-  align-items: baseline;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
   padding: 55px 20px;
 }
-main .restaurants a {
-  width: 100%;
-  color: inherit;
+@media screen and (min-width: 900px) {
+  main .restaurants {
+    padding: 50px 100px 70px;
+  }
 }
 main .restaurants_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
+  gap: 15px;
+  width: 100%;
+  max-width: 490px;
+}
+@media screen and (min-width: 900px) {
+  main .restaurants_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    gap: 50px;
+    max-width: 1080px;
+  }
+}
+main .restaurants_container_title {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 900px) {
+  main .restaurants_container_title {
+    margin-bottom: -25px;
+  }
+}
+main .restaurants_container_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
   gap: 15px;
   width: 100%;
 }
-main .restaurants_container_card {
+@media screen and (min-width: 900px) {
+  main .restaurants_container_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 100px;
+  }
+}
+main .restaurants_container_box_card {
   position: relative;
   width: 100%;
+  max-width: 490px;
   background-color: white;
   border-radius: 15px;
 }
-main .restaurants_container_card_new {
+main .restaurants_container_box_card a {
+  width: 100%;
+  color: inherit;
+}
+main .restaurants_container_box_card a img {
+  width: 100%;
+  max-width: 490px;
+  height: 174px;
+  border-radius: 15px 15px 0 0;
+}
+main .restaurants_container_box_card_new {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -196,12 +524,7 @@ main .restaurants_container_card_new {
   color: #008766;
   padding: 6px 9px;
 }
-main .restaurants_container_card img {
-  width: 100%;
-  height: 174px;
-  border-radius: 15px 15px 0 0;
-}
-main .restaurants_container_card_content {
+main .restaurants_container_box_card_content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -209,14 +532,7 @@ main .restaurants_container_card_content {
   gap: 0;
   padding: 13px 25px 13px 13px;
 }
-main .restaurants_container_card_content_text {
-  display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-  align-items: baseline;
-  gap: 5px;
-}
-main .restaurants_container_card_content label {
+main .restaurants_container_box_card_content label {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -227,7 +543,7 @@ main .restaurants_container_card_content label {
   height: 40px;
   cursor: pointer;
 }
-main .restaurants_container_card_content label .fa-regular.fa-heart {
+main .restaurants_container_box_card_content label .fa-regular.fa-heart {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -237,7 +553,7 @@ main .restaurants_container_card_content label .fa-regular.fa-heart {
   font-size: 1.4rem;
   z-index: 1;
 }
-main .restaurants_container_card_content label .fa-solid.fa-heart {
+main .restaurants_container_box_card_content label .fa-solid.fa-heart {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -246,6 +562,13 @@ main .restaurants_container_card_content label .fa-solid.fa-heart {
   position: absolute;
   font-size: 1.4rem;
   z-index: 2;
+}
+main .restaurants_container_box_card_content_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
 }
 
 /*# sourceMappingURL=home-page.css.map */

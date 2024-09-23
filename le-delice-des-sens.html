@@ -7,9 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/scss/bases.css">
     <link rel="stylesheet" href="assets/scss/restaurants.css">
-    <title>Menu Le delice des sens</title>
+    <title>Menu Le délice des sens</title>
 </head>
 <body>
     <header class="header">
@@ -19,179 +18,195 @@
         <img class="header_logo" src="/assets/images/logo/ohmyfood.png" alt="ohmyfood">
         <div class="ghost"></div>
     </header>
-    <img src="/assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image du restaurant Le delice des sens">
     <main>
-        <div class="main-title">
-            <h1>Le delice des sens</h1>
-            <i class="fa-solid fa-heart"></i>
+    <img class="banniere" src="/assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image du restaurant Le délice des sens">
+    <div class="main-container">
+        <div class="main-container_title">
+            <h1>Le délice des sens</h1>
+            <input type="checkbox" name="heart" id="heart5">
+            <label for="heart5">
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-heart"></i>
+            </label>
         </div>
-        <section class="menu">
-            <form class="commander" action="#" method="get">
-            <div class="entree">
+        <form class="menu" action="#" method="get">
+            <section class="entrees">
                 <h2>ENTRÉES</h2>
-                <span class="underline"></span>
-                    <div class="cards">
-                        <label for="entree1"></label>
-                        <div class="block">
-                            <h3>Tartare de thon</h3>
-                            <p>Assaisonné au yuzu</p>
-                        </div>
-                        <input type="checkbox" name="entree1" id="entree1">
-                        <div class="fenetre">
+                <div class="underline"></div>
+                <div class="menu_cards">
+                    <input type="checkbox" name="entree1" id="entree1">
+                    <label for="entree1">
+                        <span><b>Tartare de thon</b></span>
+                        <span>Assaisonné au yuzu</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
                             <p>25€</p>
-                            <div class="icon">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
+                            <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
-                    <div class="cards">
-                        <label for="entree2"></label>
-                        <div class="block">
-                            <h3>Bouchée de homard croustillant</h3>
-                            <p>Et sa farandole de petits légumes</p>
-                        </div>
-                        <input type="checkbox" name="entree2" id="entree2">
-                        <div class="fenetre">
+                </div>
+                <div class="menu_cards">
+                    <input type="checkbox" name="entree2" id="entree2">
+                    <label for="entree2">
+                        <span><b>Bouchée de homard croustillant</b></span>
+                        <span>Et sa farandole de petits légumes</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
                             <p>35€</p>
-                            <div class="icon">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
+                            <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
-                    <div class="cards">
-                        <label for="entree3"></label>
-                        <div class="block">
-                            <h3>Velouté de cèpes</h3>
-                            <p>Aux truffes</p>
-                        </div>
-                        <input type="checkbox" name="entree3" id="entree3">
-                        <div class="fenetre">
+                </div>
+                <div class="menu_cards">
+                    <input type="checkbox" name="entree3" id="entree3">
+                    <label for="entree3">
+                        <span><b>Velouté de cèpes</b></span>
+                        <span>Aux truffes</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
                             <p>20€</p>
-                            <div class="icon">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
+                            <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
-            <div class="plats">
+                </div>
+            </section>
+            <section class="plats">
                 <h2>PLATS</h2>
-                <span class="underline"></span>
-                <div class="cards">
-                    <label for="plat1"></label>
-                    <div class="block">
-                        <h3>Poulet rôti aux herbes de Provence</h3>
-                        <p>Et sa crème de truffe</p>
-                    </div>
+                <div class="underline"></div>
+                <div class="menu_cards">
                     <input type="checkbox" name="plat1" id="plat1">
-                    <div class="fenetre">
-                        <p>40€</p>
-                        <div class="icon">
+                    <label for="plat1">
+                        <span><b>Poulet rôti aux herbes de Provence</b></span>
+                        <span>Et sa crème de truffe</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
+                            <p>40€</p>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
                             <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
                 </div>
-                <div class="cards">
-                    <label for="plat2"></label>
-                    <div class="block">
-                        <h3>Langouste rôtie</h3>
-                        <p>Et ses légumes de saison</p>
-                    </div>
+                <div class="menu_cards">
                     <input type="checkbox" name="plat2" id="plat2">
-                    <div class="fenetre">
-                        <p>35€</p>
-                        <div class="icon">
+                    <label for="plat2">
+                        <span><b>Langouste rôtie</b></span>
+                        <span>Et ses légumes de saison</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
+                            <p>35€</p>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
                             <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
                 </div>
-                <div class="cards">
-                    <label for="plat3"></label>
-                    <div class="block">
-                        <h3>Côte de bœuf Angus</h3>
-                        <p>Et sa purée de panais</p>
-                    </div>
+                <div class="menu_cards">
                     <input type="checkbox" name="plat3" id="plat3">
-                    <div class="fenetre">
-                        <p>44€</p>
-                        <div class="icon">
+                    <label for="plat3">
+                        <span><b>Côte de bœuf Angus</b></span>
+                        <span>Et sa purée de panais</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
+                            <p>44€</p>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
                             <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
                 </div>
-            <div class="desserts">
+            </section>
+            <section class="desserts">
                 <h2>DESSERTS</h2>
-                <span class="underline"></span>
-                <div class="cards">
-                    <label for="dessert1"></label>
-                    <div class="block">
-                        <h3>Farandole de desserts</h3>
-                        <p>Du chef</p>
-                    </div>
+                <div class="underline"></div>
+                <div class="menu_cards">
                     <input type="checkbox" name="dessert1" id="dessert1">
-                    <div class="fenetre">
-                        <p>18€</p>
-                        <div class="icon">
+                    <label for="dessert1">
+                        <span><b>Farandole de desserts</b></span>
+                        <span>Du chef</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
+                            <p>18€</p>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
                             <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
                 </div>
-                <div class="cards">
-                    <label for="dessert2"></label>
-                    <div class="block">
-                        <h3>Crème brulée</h3>
-                        <p>Revisitée</p>
-                    </div>
+                <div class="menu_cards">
                     <input type="checkbox" name="dessert2" id="dessert2">
-                    <div class="fenetre">
-                        <p>22€</p>
-                        <div class="icon">
+                    <label for="dessert2">
+                        <span><b>Crème brulée</b></span>
+                        <span>Revisitée</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
+                            <p>22€</p>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
                             <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
                 </div>
-                <div class="cards">
-                    <label for="dessert3"></label>
-                    <div class="block">
-                        <h3>Tiramisu</h3>
-                        <p>À la noisette</p>
-                    </div>
+                <div class="menu_cards">
                     <input type="checkbox" name="dessert3" id="dessert3">
-                    <div class="fenetre">
-                        <p>23€</p>
-                        <div class="icon">
+                    <label for="dessert3">
+                        <span><b>Tiramisu</b></span>
+                        <span>À la noisette</span>
+                    </label>
+                    <div class="menu_cards_slidebar">
+                        <div class="menu_cards_slidebar_price">
+                            <p>23€</p>
+                        </div>
+                        <div class="menu_cards_slidebar_icon">
                             <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
                 </div>
-            <input type="submit" value="Commander">
+            </section>
+                <input class="submit" type="submit" value="Commander">
         </form>
-    </section>
-    </main>
-    <footer class="footer">
-        <h1 class="footer_logo">ohmyfood</h1>
-        <ul class="footer_links">
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-utensils"></i>
-                    Proposer un restaurant
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-handshake-angle"></i>
-                    Devenir partenaire
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Mentions légales
-                </a>
-            </li>
-            <li>
-                <a href="mailto:ohmyfood@email.com?subject=Contact">
-                    Contact
-                </a>
-            </li>
-        </ul>
+    </div>
+</main>
+<footer class="footer">
+    <h1 class="footer_logo">ohmyfood</h1>
+    <ul class="footer_links">
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-utensils"></i>
+                Proposer un restaurant
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-handshake-angle"></i>
+                Devenir partenaire
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Mentions légales
+            </a>
+        </li>
+        <li>
+            <a href="mailto:ohmyfood@email.com?subject=Contact">
+                Contact
+            </a>
+        </li>
+    </ul>
 </footer>
 </body>
 </html>
