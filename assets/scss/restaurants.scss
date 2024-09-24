@@ -7,7 +7,7 @@
     }
     h1 {
         @include font($font-shrikhand, 20px, 400);
-        @media screen and (min-width: 600px) {
+        @media screen and (min-width: 900px) {
             @include font($font-shrikhand, 26px, 400);
             }
     }
@@ -25,6 +25,7 @@
     }
     span:nth-child(2) {
         @include font($size: 13px, $weight: 300);
+        
     }
     b {
         @include font($size: 15px, $weight: 500);
@@ -54,14 +55,14 @@ main {
         border-radius: 40px 40px 0 0;
         background-color: $bg-color-grey;
         &_title {
-            @include flex(row, flex-start, center, 30px);
-            @include heart;
-            padding: 0 0 40px 10px;
+            position:relative;
+            left: -30px;
+            margin-bottom: 40px;
+            @include heart($top:-3px, $right:-60px);
+            @media screen and (min-width:900px){
+            @include heart($top:2px, $right:-60px);
+            } 
         }
-
-
-
-
         .menu {
                 .underline {
                     width: 40px;
@@ -71,7 +72,6 @@ main {
                 &_cards {
                     position: relative;
                     overflow: hidden;
-                    padding: 13px 10px;
                     width: 100%;
                     max-width: 634px;
                     border-radius: 15px;
@@ -79,20 +79,21 @@ main {
                     & label {
                         @include flex(column, center, baseline, 5px);
                         position: relative;
+                        padding: 13px 10px;
                         cursor:pointer;
                     }
                     &_slidebar {
-                        @include flex(row,space-between, center);
-                        width: 100px;
+                        @include flex(row,center, center);
+                        width: 85px;
                         height: 69.18px;
                         position: absolute;
                         top: 0;
-                        right: -50px;
+                        right: -51px;
                         background-color: white;
 
                         &_price {
-                            @include flex(row, center, end);
-                            width: 50%;
+                            @include flex(row, flex-start, end);
+                            width: 40%;
                             height: 100%;
                             padding-bottom: 13px;
                         }
@@ -100,7 +101,7 @@ main {
                             @include flex(row,space-around, center);
                             background-color: $color-green;
                             border-radius: 0 15px 15px 0;
-                            width: 50%;
+                            width: 60%;
                             height: 100%;
                             & i {
                                 font-size: 1.3rem;
@@ -109,8 +110,18 @@ main {
                         }
                     }
                 }
+                & .gradient-button {
+                    @include button(13px, 50px);
+                    @include font($size: 16px, $weight: 400);
+                    color: white;
+                    border: none;
+                    margin-bottom: 40px;
+                }
             }
         }
+    }
+    footer{
+        margin-top: -60px;
     }
 
 
@@ -119,21 +130,5 @@ main {
 
 
 
-.containerS {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-}
-.submit {
-    @include button(13px, 50px);
-    @include font($size: 16px, $weight: 400);
-    color: white;
-    border: none;
-    margin-bottom: 40px;
-}
 
-footer{
-    margin-top: -60px;
-}
 

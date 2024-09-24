@@ -46,7 +46,7 @@ main {
             margin: 20px 0 30px;
             width: 90%;
         }
-        & .button {
+        & .gradient-button {
             @include button(13px, 19px);
         }
     }
@@ -128,6 +128,8 @@ main {
             &_box {
                 @include flex(column, center, baseline, 15px);
                 width: 100%;
+                @include heart($bottom:20px, $right:20px);
+
                 @media screen and (min-width: 900px) {
                     @include flex(row, center, baseline, 100px);
                 }
@@ -159,7 +161,6 @@ main {
                     &_content {
                         @include flex(row, space-between, center);
                         padding: 13px 25px 13px 13px;
-                        @include heart;
                         &_text {
                             @include flex (column, center, baseline, 5px);
                         }
