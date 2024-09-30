@@ -1,202 +1,196 @@
-    // Animation des boutons
-    .gradient-button{
-        transition: all 300ms;
-        box-shadow: 0px 4px 10px 0px #00000040;
-    }
-    
-    .gradient-button:hover{
-        opacity: 0.8;
-        box-shadow: 0px 4px 10px 0px #00000070;
-    }
-    // Annimation des coeurs
-   .fa-solid.fa-heart {
-        background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        opacity: 0;
-        transition: all 300ms;
-    }
-    input:checked + label .fa-solid.fa-heart {
-        opacity: 1;
-    }
-    // Animation sidebar page restaurant
-    .menu_cards_slidebar {
-        transition: all 500ms ease;
-    }
-  
-    input:checked ~ .menu_cards_slidebar{
-        transform: translateX(-51px);
-        box-shadow: -15px 0 30px rgb(255, 255, 255);
-    }
-  
-    input:checked + label span{
-        width: 65%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    // Animation plats page restaurant
-    .menu section {
-        animation: visible 900ms ease-in-out forwards;
-        opacity: 0;
-    }
-    @for $i from 1 through 3 {
-        .menu section:nth-child(#{$i}) {
-            animation-delay: #{$i*100}ms;
-        }
-    }
-    @keyframes visible {
-        0% {
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
-    }
-    // Animation loader
-    .body-acceuil {
-        overflow: hidden;
-        // Gere l'activation du scroll après l'animation
-        animation: overflow 0s 5s forwards;
-    }
-    @keyframes overflow {
-        100%{
-            overflow: visible;
-        }
-    }
-    .loader {
-        @include flex(row, center, center);
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: $bg-color-grey;
-        // Fondu + desactivation du loader a la fin de l'animation
-        animation: invisible ease-out .1s 4.9s forwards;
-        z-index: 999;
-    }
-    @keyframes invisible {
-        0% {
-            opacity: 1;
-            visibility: visible;
-        }
-        100%{
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-    }
-    .loader div {
-        width: 500px;
-        height: 90px;
-        position: relative;
-        // Permet de créer un fondu en haut et en bas
-        mask-image: linear-gradient(to bottom, 
-        transparent 0%, 
-        white 10%, 
-        white 90%, 
-        transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, 
-        transparent 0%, 
-        white 10%, 
-        white 90%, 
-        transparent 100%);
-        @media screen and (max-width:900px){
-            width: 290px;
-            height: 70px;
-        }
-    }
-    .loader ul {
-        position: absolute;
-        top:-4px;
-        left: 3px;
-        @media screen and (min-width:900px){
-            top: -15px;
-            left: 10px;
-        }
-    }
-    .loader ul:nth-child(2) {
-        left: 35px;
-        @media screen and (min-width:900px){
-            left: 70px;
-        }
-    }
-    .loader ul:nth-child(3) {
-        left: 70px;
-        @media screen and (min-width:900px){
-            left: 135px;
-        }
-    }
-    .loader ul:nth-child(4) {
-        left: 122px;
-        @media screen and (min-width:900px){
-            left: 225px;
-        }
-    }
-    .loader ul:nth-child(5) {
-        left: 153px;
-        @media screen and (min-width:900px){
-            left: 280px;
-        }
-    }
-    .loader ul:nth-child(6) {
-        left: 175px;
-        @media screen and (min-width:900px){
-            left: 315px;
-        }
-    }
-    .loader ul:nth-child(7) {
-        left: 208px;
-        @media screen and (min-width:900px){
-            left: 370px;
-        }
-    }
-    .loader ul:nth-child(8) {
-        left: 242px;
-        @media screen and (min-width:900px){
-            left: 425px;
-        }
-    }
-    .loader li {
-        font-family: $font-shrikhand ;
-        font-size: 50px;
-        color: $bg-color-grey-dark;
-        text-shadow: 4px 4px 10px black;
-        @media screen and (min-width:900px) {
-            font-size: 80px;
-        }
-    }
-    // Boucle for qui gère le translate et le pourcentage des 8 animations
-    @for $i from 1 through 8 {
-        @keyframes translate#{$i} {
-            0%{
-                transform: translateY(0);
-            }
-            #{$i*10%}{
-                transform: translateY(var(--translate-value))
-            }
-            100%{
-                transform: translateY(var(--translate-value))
-            }
-        }
-        .loader .o .li#{$i} {
-            animation: translate#{$i} 2.4s forwards 3;
-        }
-    }
-    // Responsive
-    @media screen and (max-width: 900px) {
-        :root {
-            --translate-value: -727px;
-        }
-    }
-    @media screen and (min-width: 900px) {
-        :root {
-            --translate-value: -1165px;
-        }
-    }
+// Animation des boutons
+.gradient-button {
+  transition: all 300ms;
+  box-shadow: 0px 4px 10px 0px #00000040;
+}
 
+.gradient-button:hover {
+  opacity: 0.8;
+  box-shadow: 0px 4px 10px 0px #00000070;
+}
+//Animation of hearts
+.fa-solid.fa-heart {
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transition: all 300ms;
+}
+input:checked + label .fa-solid.fa-heart {
+  opacity: 1;
+}
+//Animation sidebar page restaurant
+.menu_cards_slidebar {
+  transition: all 500ms ease;
+}
 
+input:checked ~ .menu_cards_slidebar {
+  transform: translateX(-51px);
+  box-shadow: -15px 0 30px rgb(255, 255, 255);
+}
 
-    
+input:checked + label span {
+  width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// Animation plats page restaurant
+.menu section {
+  animation: visible 900ms ease-in-out forwards;
+  opacity: 0;
+}
+@for $i from 1 through 3 {
+  .menu section:nth-child(#{$i}) {
+    animation-delay: #{$i * 100}ms;
+  }
+}
+@keyframes visible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// Animation loader
+.body-acceuil {
+  overflow: hidden;
+  // Gere l'activation du scroll après l'animation
+  animation: overflow 0s 5s forwards;
+}
+@keyframes overflow {
+  100% {
+    overflow: visible;
+  }
+}
+.loader {
+  @include flex(row, center, center);
+  @include position(fixed, $top: 0, $left: 0);
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color-grey;
+  // Fondu + desactivation du loader a la fin de l'animation
+  animation: invisible ease-out 0.1s 4.9s forwards;
+  z-index: 999;
+}
+@keyframes invisible {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+.loader div {
+  width: 500px;
+  height: 90px;
+  @include position(relative);
+  // Permet de créer un fondu en haut et en bas
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    white 10%,
+    white 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    white 10%,
+    white 90%,
+    transparent 100%
+  );
+  @media screen and (max-width: 900px) {
+    width: 290px;
+    height: 70px;
+  }
+}
+.loader ul {
+  @include position(absolute, $top: -8px, $left: 3px);
+  @media screen and (min-width: 900px) {
+    @include position(absolute, $top: -17px, $left: 10px);
+  }
+}
+.loader ul:nth-child(2) {
+  left: 35px;
+  @media screen and (min-width: 900px) {
+    left: 70px;
+  }
+}
+.loader ul:nth-child(3) {
+  left: 70px;
+  @media screen and (min-width: 900px) {
+    left: 135px;
+  }
+}
+.loader ul:nth-child(4) {
+  left: 122px;
+  @media screen and (min-width: 900px) {
+    left: 225px;
+  }
+}
+.loader ul:nth-child(5) {
+  left: 153px;
+  @media screen and (min-width: 900px) {
+    left: 280px;
+  }
+}
+.loader ul:nth-child(6) {
+  left: 175px;
+  @media screen and (min-width: 900px) {
+    left: 315px;
+  }
+}
+.loader ul:nth-child(7) {
+  left: 208px;
+  @media screen and (min-width: 900px) {
+    left: 370px;
+  }
+}
+.loader ul:nth-child(8) {
+  left: 242px;
+  @media screen and (min-width: 900px) {
+    left: 425px;
+  }
+}
+.loader li {
+  @include font($font-shrikhand, 50px);
+  color: $bg-color-grey-dark;
+  text-shadow: 4px 4px 10px black;
+  @media screen and (min-width: 900px) {
+    font-size: 80px;
+  }
+}
+// Boucle for qui gère le translate et le pourcentage des 8 animations
+@for $i from 1 through 8 {
+  @keyframes translate#{$i} {
+    0% {
+      transform: translateY(0);
+    }
+    #{$i*10%} {
+      transform: translateY(var(--translate-value));
+    }
+    100% {
+      transform: translateY(var(--translate-value));
+    }
+  }
+  .loader .o .li#{$i} {
+    animation: translate#{$i} 2.4s forwards 3;
+  }
+}
+// Responsive
+@media screen and (max-width: 900px) {
+  :root {
+    --translate-value: -727px;
+  }
+}
+@media screen and (min-width: 900px) {
+  :root {
+    --translate-value: -1165px;
+  }
+}

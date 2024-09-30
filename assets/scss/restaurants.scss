@@ -1,134 +1,120 @@
-@import 'variables';
-@import 'mixins';
-@import 'animations';
-@import 'bases';
-    body {
-        background: white;
-    }
-    h1 {
-        @include font($font-shrikhand, 20px, 400);
-        @media screen and (min-width: 900px) {
-            @include font($font-shrikhand, 26px, 400);
-            }
-    }
-    h2 {
-        @include font($size: 16px, $weight: 300);
-    }
-    section {
-        @include flex(column, center, baseline, 10px);
-        width: 100%;
-        max-width: 634px;
-    }
-    form {
-        @include flex(column, center, center, 40px);
-        width: 100%;
-    }
-    span:nth-child(2) {
-        @include font($size: 13px, $weight: 300);
-        
-    }
-    b {
-        @include font($size: 15px, $weight: 500);
-    }
+@import "variables";
+@import "mixins";
+@import "animations";
+@import "bases";
+body {
+  background: white;
+}
+h1 {
+  @include font($font-shrikhand, 20px, 400);
+  @media screen and (min-width: 900px) {
+    @include font($font-shrikhand, 26px, 400);
+  }
+}
+h2 {
+  @include font($size: 16px, $weight: 300);
+}
+section {
+  @include flex(column, center, baseline, 10px);
+  width: 100%;
+  max-width: 634px;
+}
+form {
+  @include flex(column, center, center, 40px);
+  width: 100%;
+}
+span:nth-child(2) {
+  @include font($size: 13px, $weight: 300);
+}
+b {
+  @include font($size: 15px, $weight: 500);
+}
 
 .header {
-    @include flex(row, space-between, center);
-    & a {
-        color: inherit;
-    }
-    & i {
-        font-size: 1.3rem;
-    }
+  @include flex(row, space-between, center);
+  & a {
+    color: inherit;
+  }
+  & i {
+    font-size: 1.3rem;
+  }
 }
 main {
-    .banniere {
+  .banniere {
+    width: 100%;
+    height: 100%;
+    max-height: 383px;
+  }
+  .main-container {
+    @include flex(column, center, center);
+    @include position(relative, -60px);
+    max-width: 1055px;
+    margin: 0 auto;
+    padding: 32px 13px 0;
+    border-radius: 40px 40px 0 0;
+    background-color: $bg-color-grey;
+    &_title {
+      @include position(relative, $left: -30px);
+      margin-bottom: 40px;
+      @include heart($top: -3px, $right: -60px);
+      @media screen and (min-width: 900px) {
+        @include heart($top: 2px, $right: -60px);
+      }
+    }
+    .menu {
+      .underline {
+        width: 40px;
+        height: 3px;
+        background-color: $color-green;
+      }
+      &_cards {
+        @include position(relative);
+        overflow: hidden;
         width: 100%;
-        height: 100%;
-        max-height: 383px;
-    }
-    .main-container {
-        @include flex (column, center, center);
-        @include position(relative, -60px);
-        max-width: 1055px;
-        margin: 0 auto;
-        padding: 32px 13px 0;
-        border-radius: 40px 40px 0 0;
-        background-color: $bg-color-grey;
-        &_title {
-            position:relative;
-            left: -30px;
-            margin-bottom: 40px;
-            @include heart($top:-3px, $right:-60px);
-            @media screen and (min-width:900px){
-            @include heart($top:2px, $right:-60px);
-            } 
+        max-width: 634px;
+        border-radius: 15px;
+        background-color: white;
+        & label {
+          @include flex(column, center, baseline, 5px);
+          @include position(relative);
+          padding: 13px 10px;
+          cursor: pointer;
         }
-        .menu {
-                .underline {
-                    width: 40px;
-                    height: 3px;
-                    background-color:$color-green;
-                }
-                &_cards {
-                    position: relative;
-                    overflow: hidden;
-                    width: 100%;
-                    max-width: 634px;
-                    border-radius: 15px;
-                    background-color: white;
-                    & label {
-                        @include flex(column, center, baseline, 5px);
-                        position: relative;
-                        padding: 13px 10px;
-                        cursor:pointer;
-                    }
-                    &_slidebar {
-                        @include flex(row,center, center);
-                        width: 85px;
-                        height: 69.18px;
-                        position: absolute;
-                        top: 0;
-                        right: -51px;
-                        background-color: white;
+        &_slidebar {
+          @include flex(row, center, center);
+          @include position(absolute, $top: 0, $right: -51px);
+          width: 85px;
+          height: 69.18px;
+          background-color: white;
 
-                        &_price {
-                            @include flex(row, flex-start, end);
-                            width: 40%;
-                            height: 100%;
-                            padding-bottom: 13px;
-                        }
-                        &_icon {
-                            @include flex(row,space-around, center);
-                            background-color: $color-green;
-                            border-radius: 0 15px 15px 0;
-                            width: 60%;
-                            height: 100%;
-                            & i {
-                                font-size: 1.3rem;
-                                color: white;
-                            }
-                        }
-                    }
-                }
-                & .gradient-button {
-                    @include button(13px, 50px);
-                    @include font($size: 16px, $weight: 400);
-                    color: white;
-                    border: none;
-                    margin-bottom: 40px;
-                }
+          &_price {
+            @include flex(row, flex-start, end);
+            width: 40%;
+            height: 100%;
+            padding-bottom: 13px;
+          }
+          &_icon {
+            @include flex(row, space-around, center);
+            background-color: $color-green;
+            border-radius: 0 15px 15px 0;
+            width: 60%;
+            height: 100%;
+            & i {
+              font-size: 1.3rem;
+              color: white;
             }
+          }
         }
+      }
+      & .gradient-button {
+        @include button(13px, 50px);
+        @include font($size: 16px, $weight: 400);
+        color: white;
+        margin-bottom: 40px;
+      }
     }
-    footer{
-        margin-top: -60px;
-    }
-
-
-
-
-
-
-
-
-
+  }
+}
+footer {
+  margin-top: -60px;
+}

@@ -1,37 +1,37 @@
-@import 'variables';
-@import 'mixins';
-@import 'modules';
+@import "variables";
+@import "mixins";
+@import "modules";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    @include font($size:16px, $weight:400);
-    background-color: $bg-color-grey;
+  @include font($size: 16px, $weight: 400);
+  background-color: $bg-color-grey;
 }
 img {
-    object-fit: cover;
+  object-fit: cover;
 }
-h1, h2 {
-    @include font($size: 20px, $weight: 700);
+h1,
+h2 {
+  @include font($size: 20px, $weight: 700);
 }
 a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
-input[type="checkbox"]{
-    display: none;
+input[type="checkbox"] {
+  display: none;
 }
 footer {
-    background-color: $bg-color-black;
-    .footer_logo {
-        @include font($font-shrikhand, 18px, 400);
-    }
+  background-color: $bg-color-black;
+  .footer_logo {
+    @include font($font-shrikhand, 18px, 400);
+  }
 }
-    

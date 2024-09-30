@@ -1,172 +1,168 @@
-@import 'variables';
-@import 'mixins';
-@import 'animations';
-@import 'bases';
-
+@import "variables";
+@import "mixins";
+@import "animations";
+@import "bases";
 
 .header {
-    @include flex(row, center, center);
+  @include flex(row, center, center);
 }
 .link-restaurants {
-    p {
-        @include font($size: 16px, $weight: 300);
-        color: $bg-color-black;
-    }
+  p {
+    @include font($size: 16px, $weight: 300);
+    color: $bg-color-black;
+  }
 }
 .restaurants {
-    h3 {
-        @include font($size: 16px, $weight: 700);
-    }
-    p {
-        @include font($size: 15px, $weight: 300);
-    }
+  h3 {
+    @include font($size: 16px, $weight: 700);
+  }
+  p {
+    @include font($size: 15px, $weight: 300);
+  }
 }
 
 main {
-    .search-location{
-        @include flex(row, center, center, 17px);
-        background-color: $bg-color-grey-dark;
-        box-shadow: 0px 4px 4px 0px #00000040;
-        padding: 15px;
-        input {
-            outline: none;
-            border: none;
-            width: 100px;
-            background-color: inherit;
-        }
+  .search-location {
+    @include flex(row, center, center, 17px);
+    background-color: $bg-color-grey-dark;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 15px;
+    input {
+      outline: none;
+      border: none;
+      width: 100px;
+      background-color: inherit;
     }
-    .link-restaurants{
-        @include flex(column, center, center);
-        padding: 38px 0 57px;
-        text-align: center;
-        & h1 {
-            width: 70%;
-        }
-        & p {
-            margin: 20px 0 30px;
-            width: 90%;
-        }
-        & .gradient-button {
-            @include button(13px, 19px);
-        }
+  }
+  .link-restaurants {
+    @include flex(column, center, center);
+    padding: 38px 0 57px;
+    text-align: center;
+    & h1 {
+      width: 70%;
     }
-    .how-it-works {
+    & p {
+      margin: 20px 0 30px;
+      width: 90%;
+    }
+    & .gradient-button {
+      @include button(13px, 19px);
+    }
+  }
+  .how-it-works {
+    @include flex(column, center, center, 25px);
+    background-color: white;
+    padding: 50px 20px 70px;
+    @media screen and (min-width: 900px) {
+      padding: 50px 30px 70px;
+    }
+    &_container {
+      @include flex(column, center, baseline, 25px);
+      width: 100%;
+      max-width: 335px;
+      @media screen and (min-width: 900px) {
+        max-width: 1050px;
+      }
+      &_table {
         @include flex(column, center, center, 25px);
-        background-color: white;
-        padding: 50px 20px 70px;
+        width: 100%;
         @media screen and (min-width: 900px) {
-            padding: 50px 30px 70px;
-            }
-        &_container { 
-            @include flex(column, center, baseline, 25px);
-            width: 100%;
-            max-width: 335px;
-            @media screen and (min-width: 900px) {
-            max-width: 1050px;
-            }
-                &_table {
-                    @include flex(column, center, center, 25px);
-                    width: 100%;
-                    @media screen and (min-width: 900px) {
-                        flex-direction: row;
-                    }
-                    &_list {
-                        position: relative;
-                        background-color: $bg-color-grey;
-                        box-shadow: 0px 4px 15px 0px #00000026;
-                        border-radius: 20px;
-                        width: 100%;
-                        padding: 30px 0px 30px 30px;
-                        margin-left: 12px;
-                        &_content {
-                            @include flex(row, center, center);
-                            &_numbers {
-                                @include flex(row, center, center);
-                                @include position(absolute, 27px, -12px);
-                                width: 24px;
-                                height: 24px;
-                                border-radius: 50%;
-                                background-color: $color-purple;
-                                color: white;
-                            }
-                        }
-                        & i {
-                            position: absolute;
-                            left: 30px;
-                            color: $icon-color;
-                            width: 20px;
-                        }
-                        & .fa-store {
-                            color: $color-purple;
-                        }
-                    }
-                }
-            }
+          flex-direction: row;
         }
-          
-     
-    .restaurants {
-        @include flex(column, center, center, 30px);
-        padding: 55px 20px;
-        @media screen and (min-width: 900px) {
-            padding: 50px 100px 70px;
+        &_list {
+          position: relative;
+          background-color: $bg-color-grey;
+          box-shadow: 0px 4px 15px 0px #00000026;
+          border-radius: 20px;
+          width: 100%;
+          padding: 30px 0px 30px 30px;
+          margin-left: 12px;
+          &_content {
+            @include flex(row, center, center);
+            &_numbers {
+              @include flex(row, center, center);
+              @include position(absolute, 27px, -12px);
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              background-color: $color-purple;
+              color: white;
             }
-        &_container{
-            @include flex(column, center, baseline, 15px);
-            width: 100%;
-            max-width: 490px;
-            @media screen and (min-width: 900px) {
-                @include flex(column, center, baseline, 50px);
-                max-width: calc(490px * 2 + 100px);
-            }
-            &_title {
-                margin-bottom: 20px;
-                @media screen and (min-width: 900px) {
-                    margin-bottom: -25px;
-                }
-            }
-            &_box {
-                @include flex(column, center, baseline, 15px);
-                width: 100%;
-                @include heart($bottom:20px, $right:20px);
-
-                @media screen and (min-width: 900px) {
-                    @include flex(row, center, baseline, 100px);
-                }
-                
-                &_card{
-                    position: relative;
-                    width: 100%;
-                    max-width: 490px;
-                    background-color: white;
-                    border-radius: 15px;
-                    & a {
-                        width: 100%;
-                        color: inherit;
-                        & img {
-                            width: 100%;
-                            max-width: 490px;
-                            height: 174px;
-                            border-radius: 15px 15px 0 0;
-                        }
-                    }
-                    &_new{
-                        @include position(absolute, 10px, null, 10px, null);
-                        @include font(null, 14px, 500);
-                        background-color: $color-green;
-                        color: $color-text-green;
-                        padding: 6px 9px;
-
-                    }
-                    &_content {
-                        @include flex(row, space-between, center);
-                        padding: 13px 25px 13px 13px;
-                        &_text {
-                            @include flex (column, center, baseline, 5px);
-                        }
-                    }
-                }
-            }
+          }
+          & i {
+            @include position(absolute, $left: 30px);
+            color: $icon-color;
+            width: 20px;
+          }
+          & .fa-store {
+            color: $color-purple;
+          }
         }
+      }
     }
+  }
+
+  .restaurants {
+    @include flex(column, center, center, 30px);
+    padding: 55px 20px;
+    @media screen and (min-width: 900px) {
+      padding: 50px 100px 70px;
+    }
+    &_container {
+      @include flex(column, center, baseline, 15px);
+      width: 100%;
+      max-width: 490px;
+      @media screen and (min-width: 900px) {
+        @include flex(column, center, baseline, 50px);
+        max-width: calc(490px * 2 + 100px);
+      }
+      &_title {
+        margin-bottom: 20px;
+        @media screen and (min-width: 900px) {
+          margin-bottom: -25px;
+        }
+      }
+      &_box {
+        @include flex(column, center, baseline, 15px);
+        width: 100%;
+        @include heart($bottom: 20px, $right: 20px);
+
+        @media screen and (min-width: 900px) {
+          @include flex(row, center, baseline, 100px);
+        }
+
+        &_card {
+          @include position(relative);
+          width: 100%;
+          max-width: 490px;
+          background-color: white;
+          border-radius: 15px;
+          & a {
+            width: 100%;
+            color: inherit;
+            & img {
+              width: 100%;
+              max-width: 490px;
+              height: 174px;
+              border-radius: 15px 15px 0 0;
+            }
+          }
+          &_new {
+            @include position(absolute, 10px, null, 10px, null);
+            @include font(null, 14px, 500);
+            background-color: $color-green;
+            color: $color-text-green;
+            padding: 6px 9px;
+          }
+          &_content {
+            @include flex(row, space-between, center);
+            padding: 13px 25px 13px 13px;
+            &_text {
+              @include flex(column, center, baseline, 5px);
+            }
+          }
+        }
+      }
+    }
+  }
 }

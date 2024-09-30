@@ -9,7 +9,7 @@
 }
 
 .fa-solid.fa-heart {
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -78,12 +78,12 @@ input:checked + label span {
   justify-content: center;
   align-items: center;
   gap: 0;
-  width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #F6F6F6;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
   animation: invisible ease-out 0.1s 4.9s forwards;
   z-index: 999;
 }
@@ -115,12 +115,13 @@ input:checked + label span {
 
 .loader ul {
   position: absolute;
-  top: -4px;
+  top: -8px;
   left: 3px;
 }
 @media screen and (min-width: 900px) {
   .loader ul {
-    top: -15px;
+    position: absolute;
+    top: -17px;
     left: 10px;
   }
 }
@@ -191,7 +192,8 @@ input:checked + label span {
 .loader li {
   font-family: "Shrikhand";
   font-size: 50px;
-  color: #EAEAEA;
+  font-weight: 400;
+  color: #eaeaea;
   text-shadow: 4px 4px 10px black;
 }
 @media screen and (min-width: 900px) {
@@ -398,14 +400,16 @@ body {
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 400;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Roboto";
   font-size: 20px;
   font-weight: 700;
@@ -514,14 +518,11 @@ main .main-container {
   gap: 0;
   position: relative;
   top: -60px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
   max-width: 1055px;
   margin: 0 auto;
   padding: 32px 13px 0;
   border-radius: 40px 40px 0 0;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 main .main-container_title {
   position: relative;
@@ -579,7 +580,7 @@ main .main-container_title label .fa-solid.fa-heart {
 main .main-container .menu .underline {
   width: 40px;
   height: 3px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
 }
 main .main-container .menu_cards {
   position: relative;
@@ -605,11 +606,11 @@ main .main-container .menu_cards_slidebar {
   justify-content: center;
   align-items: center;
   gap: 0;
-  width: 85px;
-  height: 69.18px;
   position: absolute;
   top: 0;
   right: -51px;
+  width: 85px;
+  height: 69.18px;
   background-color: white;
 }
 main .main-container .menu_cards_slidebar_price {
@@ -628,7 +629,7 @@ main .main-container .menu_cards_slidebar_icon {
   justify-content: space-around;
   align-items: center;
   gap: 0;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   border-radius: 0 15px 15px 0;
   width: 60%;
   height: 100%;
@@ -639,19 +640,17 @@ main .main-container .menu_cards_slidebar_icon i {
 }
 main .main-container .menu .gradient-button {
   padding: 13px 50px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   border-radius: 25px;
+  border: none;
   cursor: pointer;
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 400;
   color: white;
-  border: none;
   margin-bottom: 40px;
 }
 
 footer {
   margin-top: -60px;
-}
-
-/*# sourceMappingURL=restaurants.css.map */
+}/*# sourceMappingURL=restaurants.css.map */

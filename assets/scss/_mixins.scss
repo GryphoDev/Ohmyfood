@@ -1,49 +1,55 @@
-
-@mixin font($font : $font-roboto, $size, $weight) {
-    font-family: $font;
-    font-size: $size;
-    font-weight: $weight;
+@mixin font($font: $font-roboto, $size, $weight: 400) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
 }
-@mixin flex($direction, $just, $align, $gap:0) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $just;
-    align-items: $align;
-    gap: $gap;
+@mixin flex($direction, $just, $align, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $align;
+  gap: $gap;
 }
 @mixin button($topBot, $side) {
-    padding: $topBot $side;
-    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-    border-radius: 25px;
-    cursor: pointer;
+  padding: $topBot $side;
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
 }
-@mixin position($position, $top:0px, $left:0px, $right:0px, $bottom:0px) {
-    position: $position;
+@mixin position(
+  $position,
+  $top: null,
+  $left: null,
+  $right: null,
+  $bottom: null
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+@mixin heart($top: null, $right: null, $bottom: null, $left: null) {
+  & label {
+    @include flex(row, center, center);
+    position: absolute;
     top: $top;
-    left: $left;
     right: $right;
     bottom: $bottom;
-}
-@mixin heart($top:null, $right:null, $bottom:null, $left:null) {
-    & label {
-        @include flex(row,center ,center );
-        position: absolute;
-        top: $top;
-        right: $right;
-        bottom: $bottom;
-        left: $left;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        & .fa-regular.fa-heart {
-            position: absolute;
-            font-size: 1.5rem;
-            z-index: 1;
-        }
-        & .fa-solid.fa-heart {
-            position: absolute;
-            font-size: 1.5rem;
-            z-index: 2;
-        }
-}
+    left: $left;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    & .fa-regular.fa-heart {
+      position: absolute;
+      font-size: 1.5rem;
+      z-index: 1;
+    }
+    & .fa-solid.fa-heart {
+      position: absolute;
+      font-size: 1.5rem;
+      z-index: 2;
+    }
+  }
 }
