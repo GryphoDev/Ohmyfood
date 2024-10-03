@@ -1,18 +1,20 @@
+/* Button hover effect with opacity and shadow */
 .gradient-button {
-  transition: all 300ms;
+  transition: all 300ms ease;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
 }
 
 .gradient-button:hover {
   opacity: 0.8;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4392156863);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4392156863); /* Darken the shadow on hover */
 }
 
+/* Animation for heart icons */
 .fa-solid.fa-heart {
   background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Apply gradient to text */
+  -webkit-background-clip: text; /* Safari support */
+  -webkit-text-fill-color: transparent; /* Make background visible through text */
   opacity: 0;
   transition: all 300ms;
 }
@@ -21,6 +23,7 @@ input:checked + label .fa-solid.fa-heart {
   opacity: 1;
 }
 
+/* Slidebar animation for restaurant menu */
 .menu_cards_slidebar {
   transition: all 500ms ease;
 }
@@ -33,25 +36,26 @@ input:checked ~ .menu_cards_slidebar {
 input:checked + label span {
   width: 65%;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  text-overflow: ellipsis; /* Show '...' when text overflows */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
+/* Menu animation for page loading */
 .menu section {
   animation: visible 900ms ease-in-out forwards;
   opacity: 0;
 }
 
 .menu section:nth-child(1) {
-  animation-delay: 100ms;
+  animation-delay: 100ms; /* Delay each section's animation for a staggered effect */
 }
 
 .menu section:nth-child(2) {
-  animation-delay: 200ms;
+  animation-delay: 200ms; /* Delay each section's animation for a staggered effect */
 }
 
 .menu section:nth-child(3) {
-  animation-delay: 300ms;
+  animation-delay: 300ms; /* Delay each section's animation for a staggered effect */
 }
 
 @keyframes visible {
@@ -62,14 +66,15 @@ input:checked + label span {
     opacity: 1;
   }
 }
+/* Loader animation for page loading */
 .body-acceuil {
-  overflow: hidden;
-  animation: overflow 0s 5s forwards;
+  overflow: hidden; /* Hide overflow to prevent scrolling during animation */
+  animation: overflow 0s 4s forwards;
 }
 
 @keyframes overflow {
   100% {
-    overflow: visible;
+    overflow: visible; /* Restore overflow after animation ends */
   }
 }
 .loader {
@@ -84,32 +89,32 @@ input:checked + label span {
   width: 100%;
   height: 100%;
   background-color: #f6f6f6;
-  animation: invisible ease-out 0.1s 4.9s forwards;
+  animation: invisible ease-out 0.1s 3.9s forwards;
   z-index: 999;
 }
 
 @keyframes invisible {
   0% {
     opacity: 1;
-    visibility: visible;
   }
   100% {
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    pointer-events: none; /* Disable interactions */
   }
 }
-.loader div {
-  width: 500px;
-  height: 90px;
+.loader_container {
   position: relative;
+  width: 290px;
+  height: 70px;
+  /* Fade effect for top and bottom of loader */
   mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 90%, transparent 100%);
+  /* Safari support */
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 90%, transparent 100%);
 }
-@media screen and (max-width: 900px) {
-  .loader div {
-    width: 290px;
-    height: 70px;
+@media screen and (min-width: 900px) {
+  .loader_container {
+    width: 500px;
+    height: 90px;
   }
 }
 
@@ -126,6 +131,7 @@ input:checked + label span {
   }
 }
 
+/* Individual positioning for each loader element */
 .loader ul:nth-child(2) {
   left: 35px;
 }
@@ -202,6 +208,7 @@ input:checked + label span {
   }
 }
 
+/* Loop for managing translate animation for 8 loader elements */
 @keyframes translate1 {
   0% {
     transform: translateY(0);
@@ -213,8 +220,9 @@ input:checked + label span {
     transform: translateY(var(--translate-value));
   }
 }
-.loader .o .li1 {
-  animation: translate1 2.4s forwards 3;
+.loader_container .li1 {
+  /* Apply animation to each loader element */
+  animation: translate1 2s forwards 3;
 }
 
 @keyframes translate2 {
@@ -228,8 +236,9 @@ input:checked + label span {
     transform: translateY(var(--translate-value));
   }
 }
-.loader .o .li2 {
-  animation: translate2 2.4s forwards 3;
+.loader_container .li2 {
+  /* Apply animation to each loader element */
+  animation: translate2 2s forwards 3;
 }
 
 @keyframes translate3 {
@@ -243,8 +252,9 @@ input:checked + label span {
     transform: translateY(var(--translate-value));
   }
 }
-.loader .o .li3 {
-  animation: translate3 2.4s forwards 3;
+.loader_container .li3 {
+  /* Apply animation to each loader element */
+  animation: translate3 2s forwards 3;
 }
 
 @keyframes translate4 {
@@ -258,8 +268,9 @@ input:checked + label span {
     transform: translateY(var(--translate-value));
   }
 }
-.loader .o .li4 {
-  animation: translate4 2.4s forwards 3;
+.loader_container .li4 {
+  /* Apply animation to each loader element */
+  animation: translate4 2s forwards 3;
 }
 
 @keyframes translate5 {
@@ -273,8 +284,9 @@ input:checked + label span {
     transform: translateY(var(--translate-value));
   }
 }
-.loader .o .li5 {
-  animation: translate5 2.4s forwards 3;
+.loader_container .li5 {
+  /* Apply animation to each loader element */
+  animation: translate5 2s forwards 3;
 }
 
 @keyframes translate6 {
@@ -288,8 +300,9 @@ input:checked + label span {
     transform: translateY(var(--translate-value));
   }
 }
-.loader .o .li6 {
-  animation: translate6 2.4s forwards 3;
+.loader_container .li6 {
+  /* Apply animation to each loader element */
+  animation: translate6 2s forwards 3;
 }
 
 @keyframes translate7 {
@@ -303,8 +316,9 @@ input:checked + label span {
     transform: translateY(var(--translate-value));
   }
 }
-.loader .o .li7 {
-  animation: translate7 2.4s forwards 3;
+.loader_container .li7 {
+  /* Apply animation to each loader element */
+  animation: translate7 2s forwards 3;
 }
 
 @keyframes translate8 {
@@ -318,10 +332,12 @@ input:checked + label span {
     transform: translateY(var(--translate-value));
   }
 }
-.loader .o .li8 {
-  animation: translate8 2.4s forwards 3;
+.loader_container .li8 {
+  /* Apply animation to each loader element */
+  animation: translate8 2s forwards 3;
 }
 
+/* Responsive translate value adjustments */
 @media screen and (max-width: 900px) {
   :root {
     --translate-value: -727px;
@@ -332,6 +348,53 @@ input:checked + label span {
     --translate-value: -1165px;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #f6f6f6;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+h1,
+h2 {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 700;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+footer {
+  background-color: #353535;
+}
+footer .footer_logo {
+  font-family: "Shrikhand";
+  font-size: 18px;
+  font-weight: 400;
+}
+
 .header {
   background-color: white;
   padding: 20px;
@@ -388,53 +451,6 @@ input:checked + label span {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 400;
-  background-color: #f6f6f6;
-}
-
-img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-h1,
-h2 {
-  font-family: "Roboto";
-  font-size: 20px;
-  font-weight: 700;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-li {
-  list-style-type: none;
-}
-
-input[type=checkbox] {
-  display: none;
-}
-
-footer {
-  background-color: #353535;
-}
-footer .footer_logo {
-  font-family: "Shrikhand";
-  font-size: 18px;
-  font-weight: 400;
 }
 
 body {

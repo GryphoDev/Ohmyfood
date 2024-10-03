@@ -2,6 +2,7 @@
 @import "mixins";
 @import "animations";
 @import "bases";
+@import "modules";
 body {
   background: white;
 }
@@ -29,7 +30,6 @@ span:nth-child(2) {
 b {
   @include font($size: 15px, $weight: 500);
 }
-
 .header {
   @include flex(row, space-between, center);
   & a {

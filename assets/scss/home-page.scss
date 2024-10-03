@@ -2,6 +2,7 @@
 @import "mixins";
 @import "animations";
 @import "bases";
+@import "modules";
 
 .header {
   @include flex(row, center, center);
@@ -20,7 +21,6 @@
     @include font($size: 15px, $weight: 300);
   }
 }
-
 main {
   .search-location {
     @include flex(row, center, center, 17px);
@@ -126,11 +126,9 @@ main {
         @include flex(column, center, baseline, 15px);
         width: 100%;
         @include heart($bottom: 20px, $right: 20px);
-
         @media screen and (min-width: 900px) {
           @include flex(row, center, baseline, 100px);
         }
-
         &_card {
           @include position(relative);
           width: 100%;
